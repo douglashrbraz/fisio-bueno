@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Pré-Avaliação de Sintomas | Dr. Evandro Bueno</title>
+  <meta name="description" content="Preencha o questionário de pré-avaliação do Dr. Evandro Bueno para agilizar seu agendamento de Fisioterapia e Osteopatia em Bariri/SP.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://evandrojbueno.com.br/pages/pre-avaliacao.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pré-Avaliação de Sintomas | Dr. Evandro Bueno">
+  <meta property="og:description" content="Preencha o questionário de pré-avaliação do Dr. Evandro Bueno para agilizar seu agendamento de Fisioterapia e Osteopatia em Bariri/SP.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evandrojbueno.com.br/pages/pre-avaliacao.html">
+  <meta property="og:image" content="https://evandrojbueno.com.br/assets/images/capa.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pré-Avaliação de Sintomas | Dr. Evandro Bueno">
+  <meta name="twitter:description" content="Preencha o questionário de pré-avaliação do Dr. Evandro Bueno para agilizar seu agendamento de Fisioterapia e Osteopatia em Bariri/SP.">
+  <meta name="twitter:image" content="https://evandrojbueno.com.br/assets/images/capa.jpg">
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="../css/main.css">
+  
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Evandro Bueno",
+    "jobTitle": "Fisioterapeuta e Osteopata",
+    "url": "https://evandrojbueno.com.br"
+  }
+  </script>
+
+  <style>
+    /* Ajustes específicos para a página do formulário para alinhar caminhos */
+    .page--form {
+      padding-top: var(--header-height);
+      background-color: var(--color-bg-muted);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body class="page--form">
+
+  <!-- HEADER -->
+  <header class="header header--solid" role="banner">
+    <div class="header__inner">
+      <a href="../index.html" class="header__logo" aria-label="Evandro Bueno — Página inicial">
+        <span class="text-gradient font-bold" style="font-size:var(--text-lg)">Evandro Bueno</span>
+      </a>
+      <a href="../index.html" class="btn btn--outline btn--sm" aria-label="Voltar para a página inicial">
+        Voltar ao início
+      </a>
+    </div>
+  </header>
+
+  <main style="flex: 1; padding: var(--space-12) 0">
+    <div class="container">
+      
+      <!-- HERO RESUMIDO -->
+      <div class="text-center" style="max-width: 640px; margin: 0 auto var(--space-8) auto">
+        <span class="hero__label" style="margin: 0 auto var(--space-3) auto">Etapa 1 de 1 — Avaliação Inicial</span>
+        <h1 class="section__title" style="font-size:var(--text-3xl)">Pré-Avaliação de Sintomas</h1>
+        <p class="section__subtitle" style="font-size:var(--text-base)">
+          Responda às perguntas abaixo sobre a sua dor. Isso ajudará o Dr. Evandro a entender o seu caso antes mesmo da consulta e preparar o tratamento ideal.
+        </p>
+      </div>
+
+      <!-- FORMULÁRIO CARD -->
+      <div class="form-card" style="max-width:640px; margin:0 auto">
+        <div class="form-card__header">
+          <h2 class="form-card__title" style="font-size:var(--text-xl)">Seus Sintomas</h2>
+          <p class="form-card__subtitle">Todos os campos com * são obrigatórios</p>
+        </div>
+
+        <form
+          class="form"
+          data-whatsapp-form
+          data-whatsapp-phone="5514997460343"
+          data-whatsapp-title="Pré-Avaliação — Novo Paciente"
+          novalidate
+        >
+          <!-- Nome e Telefone -->
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label form__label--required" for="nome">Nome Completo</label>
+              <input
+                class="form__input"
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Seu nome"
+                required
+                autocomplete="name"
+                data-label="Nome"
+              >
+              <span class="form__error" id="erro-nome" data-error-for="nome" style="display:none">Preencha seu nome completo</span>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label form__label--required" for="telefone">WhatsApp</label>
+              <input
+                class="form__input"
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(14) 99999-9999"
+                required
+                autocomplete="tel"
+                data-label="WhatsApp"
+              >
+              <span class="form__error" id="erro-telefone" data-error-for="telefone" style="display:none">Preencha seu WhatsApp</span>
+            </div>
+          </div>
+
+          <!-- Onde Sente a Dor (Checkboxes) -->
+          <div class="form__group">
+            <label class="form__label form__label--required">Onde você sente dor ou desconforto? (Selecione todas que aplicam)</label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); margin-top: var(--space-1)">
+              
+              <label class="form__check">
+                <input class="form__check-input" type="checkbox" name="dor" value="Lombar (Fundo das costas)" data-label="Local da Dor" required>
+                <span class="form__check-label">Lombar (Fundo das costas)</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="checkbox" name="dor" value="Cervical (Pescoço)" data-label="Local da Dor" required>
+                <span class="form__check-label">Cervical (Pescoço)</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="checkbox" name="dor" value="Nervo Ciático" data-label="Local da Dor" required>
+                <span class="form__check-label">Nervo Ciático</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="checkbox" name="dor" value="Escápula / Entre os Ombros" data-label="Local da Dor" required>
+                <span class="form__check-label">Escápula / Ombros</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="checkbox" name="dor" value="Quadril / Pernas" data-label="Local da Dor" required>
+                <span class="form__check-label">Quadril / Pernas</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="checkbox" name="dor" value="Outra Dor / Articulação" data-label="Local da Dor" required>
+                <span class="form__check-label">Outro local</span>
+              </label>
+
+            </div>
+            <span class="form__error" id="erro-dor" data-error-for="dor" style="display:none; margin-top:var(--space-2)">Selecione ao menos um local de dor</span>
+          </div>
+
+          <!-- Há quanto tempo sente a dor (Radios) -->
+          <div class="form__group">
+            <label class="form__label form__label--required">Há quanto tempo você convive com essa dor?</label>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-1)">
+              
+              <label class="form__check">
+                <input class="form__check-input" type="radio" name="tempo" value="Menos de 1 mês (Recente)" data-label="Tempo com a dor" required>
+                <span class="form__check-label">Menos de 1 mês (Dor recente)</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="radio" name="tempo" value="Entre 1 a 6 meses" data-label="Tempo com a dor" required>
+                <span class="form__check-label">Entre 1 a 6 meses</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="radio" name="tempo" value="Mais de 6 meses (Crônica)" data-label="Tempo com a dor" required>
+                <span class="form__check-label">Mais de 6 meses (Dor crônica)</span>
+              </label>
+
+            </div>
+            <span class="form__error" id="erro-tempo" data-error-for="tempo" style="display:none">Selecione o tempo aproximado da dor</span>
+          </div>
+
+          <!-- A dor impede atividades (Radios) -->
+          <div class="form__group">
+            <label class="form__label form__label--required">Essa dor impede ou atrapalha suas atividades cotidianas ou trabalho?</label>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-1)">
+              
+              <label class="form__check">
+                <input class="form__check-input" type="radio" name="impedimento" value="Sim, impede totalmente" data-label="Impede atividades" required>
+                <span class="form__check-label">Sim, me impede totalmente</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="radio" name="impedimento" value="Parcialmente / Atrapalha bastante" data-label="Impede atividades" required>
+                <span class="form__check-label">Parcialmente (consigo fazer, mas com sofrimento)</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="radio" name="impedimento" value="Não, não impede" data-label="Impede atividades" required>
+                <span class="form__check-label">Não, não atrapalha minhas tarefas</span>
+              </label>
+
+            </div>
+            <span class="form__error" id="erro-impedimento" data-error-for="impedimento" style="display:none">Selecione uma opção</span>
+          </div>
+
+          <!-- Já tentou outros tratamentos (Radios) -->
+          <div class="form__group">
+            <label class="form__label form__label--required">Você já realizou outros tratamentos ou tomou medicamentos para essa dor?</label>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-1)">
+              
+              <label class="form__check">
+                <input class="form__check-input" type="radio" name="tratamentos" value="Sim, já tentei tratamentos / remédios" data-label="Tratamentos anteriores" required>
+                <span class="form__check-label">Sim, já tentei (medicamentos, repouso, outras fisios)</span>
+              </label>
+
+              <label class="form__check">
+                <input class="form__check-input" type="radio" name="tratamentos" value="Não, este é o primeiro tratamento" data-label="Tratamentos anteriores" required>
+                <span class="form__check-label">Não, este será meu primeiro tratamento específico</span>
+              </label>
+
+            </div>
+            <span class="form__error" id="erro-tratamentos" data-error-for="tratamentos" style="display:none">Selecione uma das opções</span>
+          </div>
+
+          <!-- Botão Enviar -->
+          <button class="btn btn--secondary btn--lg btn--full hover-lift" type="submit" style="margin-top:var(--space-4)">
+            Enviar Pré-Avaliação pelo WhatsApp
+          </button>
+
+          <!-- LGPD -->
+          <p class="form__privacy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            Seus dados são 100% confidenciais e protegidos. Usamos apenas para triagem clínica da consulta.
+          </p>
+
+          <!-- Sucesso -->
+          <div class="form__success" role="status" aria-live="polite">
+            <div class="form__success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <p class="form__success-title">Avaliação Concluída!</p>
+            <p class="form__success-text">Redirecionando para o WhatsApp do Dr. Evandro para finalizar seu agendamento...</p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER SIMPLIFICADO -->
+  <footer class="footer--simple" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copyright">© 2026 Evandro Bueno Fisioterapia & Osteopatia · Todos os direitos reservados</p>
+      <p class="footer__legal" style="max-width: 600px; margin: 0 auto; opacity: 0.5">
+        As respostas fornecidas neste questionário têm finalidade exclusiva de pré-triagem biomecânica e não substituem uma avaliação ou consulta presencial.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

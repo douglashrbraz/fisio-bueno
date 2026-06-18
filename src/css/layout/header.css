@@ -1,0 +1,205 @@
+/* ==========================================================================
+   header.css — Cabeçalho fixo
+   ========================================================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  transition: background-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.header--transparent {
+  background-color: transparent;
+}
+
+.header--solid {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.header--dark {
+  background-color: var(--color-dark-bg);
+}
+
+.header--dark.header--solid {
+  background-color: var(--color-dark-surface);
+}
+
+.header__inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.header__logo img {
+  height: 40px;
+  width: auto;
+}
+
+.header--dark .header__logo,
+.header--transparent .header__logo {
+  color: var(--color-text-inverse);
+}
+
+/* Nav */
+.header__nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+}
+
+.header__nav-link {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.header__nav-link:hover {
+  color: var(--color-secondary);
+}
+
+.header--dark .header__nav-link,
+.header--transparent .header__nav-link {
+  color: var(--color-dark-muted);
+}
+
+.header--dark .header__nav-link:hover,
+.header--transparent .header__nav-link:hover {
+  color: var(--color-text-inverse);
+}
+
+/* CTA no header */
+.header__cta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__cta {
+    display: inline-flex;
+  }
+}
+
+/* Menu hambúrguer (mobile) */
+.header__menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.header__menu-btn:hover {
+  background-color: var(--color-bg-muted);
+}
+
+@media (min-width: 768px) {
+  .header__menu-btn {
+    display: none;
+  }
+}
+
+.header__menu-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  transform-origin: center;
+}
+
+.header--dark .header__menu-bar,
+.header--transparent .header__menu-bar {
+  background-color: var(--color-text-inverse);
+}
+
+/* Menu aberto */
+.header.is-open .header__menu-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header.is-open .header__menu-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.header.is-open .header__menu-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Drawer mobile */
+.header__drawer {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6) var(--container-gutter);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  z-index: 99;
+}
+
+.header.is-open .header__drawer {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .header__drawer {
+    display: none;
+  }
+}
+
+.header__drawer-link {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__drawer-link:last-child {
+  border-bottom: none;
+}

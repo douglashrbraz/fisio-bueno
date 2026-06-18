@@ -1,0 +1,135 @@
+/* ==========================================================================
+   footer.css — Rodapé
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-muted);
+  padding: var(--space-12) 0 var(--space-8);
+}
+
+.footer__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+.footer__grid {
+  display: grid;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__logo {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+}
+
+.footer__tagline {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.footer__col-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-inverse);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-4);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer__link {
+  font-size: var(--text-sm);
+  color: var(--color-dark-muted);
+  transition: color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer__link:hover {
+  color: var(--color-text-inverse);
+}
+
+.footer__divider {
+  height: 1px;
+  background-color: var(--color-dark-surface);
+  margin-bottom: var(--space-6);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer__copyright {
+  font-size: var(--text-sm);
+}
+
+.footer__legal {
+  font-size: var(--text-xs);
+  color: var(--color-dark-muted);
+  opacity: 0.6;
+}
+
+/* Footer simples (para pré-atendimento) */
+.footer--simple {
+  padding: var(--space-8) 0;
+  text-align: center;
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-muted);
+}
+
+.footer--simple .footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.footer__contact {
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer__contact a {
+  color: var(--color-primary-light);
+  transition: color var(--transition-fast);
+}
+
+.footer__contact a:hover {
+  color: var(--color-text-inverse);
+}
