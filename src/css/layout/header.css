@@ -56,8 +56,15 @@
 }
 
 .header__logo img {
-  height: 40px;
+  height: 60px;
   width: auto;
+  transition: height var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .header__logo img {
+    height: 70px;
+  }
 }
 
 .header--dark .header__logo,
