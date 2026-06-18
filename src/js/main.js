@@ -6,6 +6,7 @@ import { initFormWhatsapp } from './modules/form-whatsapp.js';
 import { initScrollReveal } from './modules/scroll-reveal.js';
 import { initAnalyticsEvents, initScrollTracking } from './modules/analytics.js';
 import { initCookieBanner } from './modules/cookie-banner.js';
+import { initVideoModal }   from './modules/video-modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
@@ -15,4 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnalyticsEvents();
   initScrollTracking();
   initCookieBanner();
+  initVideoModal();
 });
+
