@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta de Site — Dr. Evandro Bueno · DK Assessoria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1D1D1D;
+      --bg2:       #252525;
+      --bg3:       #2C2C2C;
+      --purple:    #AD80A7;
+      --purple-lt: #C39FBD;
+      --green:     #00C851;
+      --text:      #E8E8E8;
+      --muted:     #9A9A9A;
+      --border:    #383838;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1D1D1D 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 24px 64px;
+      text-align: center;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: rgba(173, 128, 167, 0.15);
+      color: var(--purple-lt);
+      border: 1px solid rgba(173, 128, 167, 0.3);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 span.empresa {
+      color: var(--purple-lt);
+    }
+
+    .hero .subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+
+    .hero .cta-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: #0a0a0a;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      transition: opacity .2s;
+    }
+    .hero .cta-hero:hover { opacity: .88; }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 60px 24px 0;
+      text-align: center;
+    }
+    .intro h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .intro p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    .intro strong { color: var(--text); }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+      text-align: center;
+      padding: 64px 24px 0;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .section-title h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .section-title p { color: var(--muted); font-size: 16px; }
+
+    /* ── PLANOS ── */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 36px auto 0;
+      padding: 0 24px;
+    }
+
+    .plan {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 36px 30px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan.featured {
+      border-color: var(--purple);
+      background: linear-gradient(160deg, #2a1f29 0%, var(--bg2) 100%);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .plan .plan-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--purple);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 4px 18px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--purple-lt);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .plan-price {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .plan-price span { font-size: 18px; font-weight: 500; vertical-align: super; margin-right: 2px; color: var(--muted); }
+
+    .plan-period {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 32px;
+      flex: 1;
+    }
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: #c8c8c8;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .plan-features li:last-child { border-bottom: none; }
+    .plan-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .plan-cta {
+      display: block;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      padding: 13px 24px;
+      border-radius: 8px;
+      transition: opacity .2s;
+    }
+    .plan.featured .plan-cta {
+      background: var(--purple);
+      color: #fff;
+    }
+    .plan:not(.featured) .plan-cta {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .plan-cta:hover { opacity: .88; }
+
+    /* ── WHY ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+    }
+
+    .why-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 22px;
+    }
+    .why-card .icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .why-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .why-card p  { font-size: 13px; color: var(--muted); }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+    }
+    .portfolio-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .portfolio-img-placeholder {
+      width: 100%;
+      height: 160px;
+      background: linear-gradient(135deg, #064e3b, #059669);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+    .portfolio-info { padding: 16px; }
+    .portfolio-info h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .portfolio-info p  { font-size: 12px; color: var(--muted); }
+
+    /* ── EXTRAS ── */
+    .extras {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .extras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .extra-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 16px;
+      font-size: 13px;
+    }
+    .extra-item .extra-icon { font-size: 20px; margin-bottom: 8px; }
+    .extra-item strong { display: block; margin-bottom: 4px; font-size: 14px; }
+    .extra-item span { color: var(--muted); }
+
+    /* ── PAGAMENTO ── */
+    .payment-box {
+      max-width: 700px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+    }
+    .payment-inner {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      text-align: center;
+    }
+    @media (max-width: 500px) { .payment-inner { grid-template-columns: 1fr; } }
+    .payment-step { text-align: center; }
+    .payment-step .pct {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--purple-lt);
+      line-height: 1;
+    }
+    .payment-step p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      text-align: center;
+      padding: 64px 24px 80px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .cta-final h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .cta-final p { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+    .cta-final .btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #0a0a0a;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 15px 36px;
+      border-radius: 9px;
+      transition: opacity .2s;
+    }
+    .cta-final .btn-main:hover { opacity: .88; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer strong { color: var(--text); }
+
+    /* Divider */
+    .divider { max-width: 1000px; margin: 56px auto 0; padding: 0 24px; }
+    .divider hr { border: none; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Proposta Exclusiva · DK Assessoria</div>
+    <h1>Site profissional para o<br><span class="empresa">Dr. Evandro Bueno</span></h1>
+    <p class="subtitle">Preparamos um projeto sob medida para consolidar sua autoridade e atrair novos pacientes em Bariri/SP. Veja as condições abaixo.</p>
+    <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20gostei%20da%20proposta%20personalizada%20para%20o%20Dr.%20Evandro%20Bueno!" class="cta-hero">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.215a.75.75 0 0 0 .928.928l5.359-1.476A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.698 9.698 0 0 1-4.951-1.353l-.355-.21-3.682 1.014 1.014-3.682-.21-.355A9.698 9.698 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+      Aprovar Proposta com Douglas
+    </a>
+  </section>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <h2>Por que seu consultório de Fisioterapia & Osteopatia precisa de um site?</h2>
+    <p>Hoje, <strong>mais de 80% das pessoas buscam no Google antes de escolher um profissional de saúde em sua cidade.</strong> Um site próprio transmite a seriedade do seu trabalho, destaca suas especialidades e capta pacientes diretamente para o seu WhatsApp.</p>
+  </div>
+
+  <!-- WHY CARDS -->
+  <div class="section-title" style="padding-top: 44px;">
+    <h2>Diferenciais do projeto para Dr. Evandro</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon">🔍</div>
+      <h3>SEO Local em Bariri</h3>
+      <p>Apareça para pessoas que buscam "Fisioterapia em Bariri", "Osteopata perto de mim" ou tratamentos para coluna e ciático.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">📋</div>
+      <h3>Pré-Avaliação Clínica</h3>
+      <p>Triagem inteligente que faz perguntas de sintomas e envia um relatório pronto ao seu WhatsApp, qualificando o paciente antes da consulta.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">💼</div>
+      <h3>Autoridade Profissional</h3>
+      <p>Seu logotipo, foto profissional e vídeos de apresentação integrados de forma limpa, elegante e de carregamento rápido.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">📱</div>
+      <h3>Experiência Mobile Premium</h3>
+      <p>Totalmente otimizado para celulares. Menus rápidos, botões de ação fluidos e visualização de vídeos direto no site via pop-up.</p>
+    </div>
+  </div>
+
+  <div class="divider"><hr/></div>
+
+  <!-- PLANOS -->
+  <div class="section-title">
+    <h2>Planos de Desenvolvimento</h2>
+    <p>Preços fixos, transparentes e sob medida para o seu momento profissional.</p>
+  </div>
+
+  <div class="plans-grid">
+
+    <!-- STARTER -->
+    <div class="plan">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price"><span>R$</span>800</div>
+      <div class="plan-period">Entrega em 7 dias</div>
+      <ul class="plan-features">
+        <li>1 Página Principal (Landing Page)</li>
+        <li>Apresentação de Serviços Básicos</li>
+        <li>Design Limpo e Responsivo (Celular/PC)</li>
+        <li>Integração direta com WhatsApp</li>
+        <li>Formulário de Contato Simplificado</li>
+        <li>SEO Local Básico (Google)</li>
+        <li>Hospedagem & Suporte: R$ 30/mês</li>
+        <li>Domínio registrado incluso no 1º ano</li>
+      </ul>
+      <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20tenho%20interesse%20no%20plano%20Starter%20(R%24800)%20para%20o%20Dr.%20Evandro!" class="plan-cta">Quero este plano</a>
+    </div>
+
+    <!-- PRO -->
+    <div class="plan featured">
+      <div class="plan-badge">Mais Recomendado</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price"><span>R$</span>1.500</div>
+      <div class="plan-period">Entrega em 10 dias</div>
+      <ul class="plan-features">
+        <li>Landing Page Premium de Alta Conversão</li>
+        <li><strong>Formulário de Pré-Avaliação Online</strong> (Triagem de dores)</li>
+        <li>Envio estruturado das respostas em Markdown no WhatsApp</li>
+        <li>Seção "Sobre" com Integração do seu Instagram Reel</li>
+        <li>Modal popup inteligente para assistir vídeos sem sair do site</li>
+        <li>SEO de Saúde Avançado (Rich Snippets estruturados)</li>
+        <li>Painel Google Analytics 4 para acompanhar cliques</li>
+        <li>Hospedagem & Suporte contínuo: R$ 30/mês</li>
+        <li>Domínio e Certificado SSL inclusos no 1º ano</li>
+        <li>Ajustes e polimento pós-lançamento garantidos</li>
+      </ul>
+      <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20tenho%20interesse%20no%20plano%20Pro%20(R%241.500)%20para%20o%20Dr.%20Evandro!" class="plan-cta">Quero este plano</a>
+    </div>
+
+    <!-- INSTITUCIONAL -->
+    <div class="plan">
+      <div class="plan-name">Institucional</div>
+      <div class="plan-price"><span>R$</span>3.000</div>
+      <div class="plan-period">Entrega em 20 dias</div>
+      <ul class="plan-features">
+        <li>Site Clínico Completo com até 5 páginas</li>
+        <li>Páginas individuais para Fisioterapia e Osteopatia</li>
+        <li>Blog integrado para artigos e dicas posturais</li>
+        <li>Integração de Avaliações automáticas do Google</li>
+        <li>Google Analytics 4 + Google Search Console instalados</li>
+        <li>SEO Avançado de Alta Autoridade Local</li>
+        <li>Hospedagem & Suporte contínuo: R$ 30/mês</li>
+        <li>Domínio e Certificado SSL inclusos no 1º ano</li>
+        <li>Revisões livres de layout durante 30 dias</li>
+      </ul>
+      <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20tenho%20interesse%20no%20plano%20Institucional%20(R%243.000)%20para%20o%20Dr.%20Evandro!" class="plan-cta">Quero este plano</a>
+    </div>
+
+  </div>
+
+  <div class="divider"><hr/></div>
+
+  <!-- PORTFOLIO -->
+  <div class="section-title">
+    <h2>Experiência que gera resultados</h2>
+    <p>Algumas das soluções recentes criadas pela nossa assessoria para profissionais e clínicas de saúde.</p>
+  </div>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="portfolio-img-placeholder">🏥</div>
+      <div class="portfolio-info">
+        <h4>Clínica Nishijima</h4>
+        <p>Site institucional médico + agendamentos</p>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-img-placeholder">🧬</div>
+      <div class="portfolio-info">
+        <h4>Biolab Russas</h4>
+        <p>Site institucional + simulador de exames</p>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-img-placeholder">🩺</div>
+      <div class="portfolio-info">
+        <h4>Dra. Vanessa Tiemi</h4>
+        <p>Landing page médica de alta performance</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><hr/></div>
+
+  <!-- EXTRAS -->
+  <div class="section-title">
+    <h2>Incluído em qualquer plano</h2>
+  </div>
+  <div class="extras">
+    <div class="extras-grid">
+      <div class="extra-item">
+        <div class="extra-icon">🌐</div>
+        <strong>Registro de Domínio</strong>
+        <span>Cuidamos do seu registro (.com.br) grátis no primeiro ano</span>
+      </div>
+      <div class="extra-item">
+        <div class="extra-icon">🔒</div>
+        <strong>Segurança SSL (HTTPS)</strong>
+        <span>Site seguro para os dados de saúde dos seus pacientes</span>
+      </div>
+      <div class="extra-item">
+        <div class="extra-icon">☁️</div>
+        <strong>Hospedagem DK</strong>
+        <span>Servidores VPS rápidos por apenas R$ 30 por mês</span>
+      </div>
+      <div class="extra-item">
+        <div class="extra-icon">⚡</div>
+        <strong>Velocidade Real</strong>
+        <span>Carregamento instantâneo no celular, sem travar</span>
+      </div>
+      <div class="extra-item">
+        <div class="extra-icon">🎨</div>
+        <strong>Design Exclusivo</strong>
+        <span>Desenvolvimento alinhado ao seu logotipo e paleta de cores</span>
+      </div>
+      <div class="extra-item">
+        <div class="extra-icon">💬</div>
+        <strong>Suporte Humanizado</strong>
+        <span>Contato direto comigo via WhatsApp para alterações e suporte</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><hr/></div>
+
+  <!-- PAGAMENTO -->
+  <div class="section-title">
+    <h2>Facilidades de Pagamento</h2>
+    <p>Condições de investimento claras e sem pegadinhas.</p>
+  </div>
+  <div class="payment-box">
+    <div class="payment-inner">
+      <div class="payment-step">
+        <div class="pct">50%</div>
+        <p><strong>Entrada de Sinal</strong><br/>Para iniciarmos o desenvolvimento</p>
+      </div>
+      <div class="payment-step">
+        <div class="pct">50%</div>
+        <p><strong>Entrega Final</strong><br/>Apenas após o site estar aprovado e online</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cta-final">
+    <h2>Pronto para dar o próximo passo?</h2>
+    <p>Toque no botão abaixo para falar comigo pelo WhatsApp e iniciarmos o projeto.</p>
+    <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20li%20a%20proposta%20personalizada%20para%20o%20Dr.%20Evandro%20Bueno%20e%20quero%20comecar!" class="btn-main">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.215a.75.75 0 0 0 .928.928l5.359-1.476A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.698 9.698 0 0 1-4.951-1.353l-.355-.21-3.682 1.014 1.014-3.682-.21-.355A9.698 9.698 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+      Aprovar Proposta no WhatsApp
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>DK Assessoria</strong> · Douglas Braz · (19) 99846-3629 · douglashrbraz@gmail.com<br/>
+    <span style="font-size:12px;margin-top:6px;display:block;">Proposta gerada exclusivamente para <strong>Dr. Evandro Bueno</strong> · Bariri/SP</span>
+  </footer>
+
+</body>
+</html>
