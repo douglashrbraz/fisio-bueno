@@ -43,7 +43,6 @@
   gap: var(--space-8);
 }
 
-/* Logo */
 .header__logo {
   display: flex;
   align-items: center;
@@ -54,11 +53,11 @@
   white-space: nowrap;
   flex-shrink: 0;
   height: 100%;
-  padding: var(--space-2) 0;
+  padding: var(--space-1) 0;
 }
 
 .header__logo img {
-  height: 50px;
+  height: 70px;
   width: auto;
   max-height: 100%;
   object-fit: contain;
@@ -66,8 +65,11 @@
 }
 
 @media (min-width: 768px) {
+  .header__logo {
+    padding: 0;
+  }
   .header__logo img {
-    height: 60px;
+    height: 80px;
   }
 }
 
