@@ -101,7 +101,7 @@
     .intro p {
       color: var(--muted);
       font-size: 16px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .intro strong { color: var(--text); }
 
@@ -122,9 +122,8 @@
     /* ── PLANOS ── */
     .plans-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1000px;
+      grid-template-columns: 1fr;
+      max-width: 650px;
       margin: 36px auto 0;
       padding: 0 24px;
     }
@@ -133,13 +132,10 @@
       background: var(--bg2);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 36px 30px;
+      padding: 40px 36px;
       position: relative;
       display: flex;
       flex-direction: column;
-    }
-
-    .plan.featured {
       border-color: var(--purple);
       background: linear-gradient(160deg, #2a1f29 0%, var(--bg2) 100%);
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
@@ -190,13 +186,12 @@
     .plan-features {
       list-style: none;
       margin-bottom: 32px;
-      flex: 1;
     }
     .plan-features li {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      font-size: 14px;
+      font-size: 15px;
       color: #c8c8c8;
       padding: 8px 0;
       border-bottom: 1px solid var(--border);
@@ -214,20 +209,13 @@
       display: block;
       text-align: center;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 16px;
       text-decoration: none;
-      padding: 13px 24px;
+      padding: 14px 24px;
       border-radius: 8px;
       transition: opacity .2s;
-    }
-    .plan.featured .plan-cta {
       background: var(--purple);
       color: #fff;
-    }
-    .plan:not(.featured) .plan-cta {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
     }
     .plan-cta:hover { opacity: .88; }
 
@@ -305,6 +293,43 @@
     .extra-item strong { display: block; margin-bottom: 4px; font-size: 14px; }
     .extra-item span { color: var(--muted); }
 
+    /* ── HOSPEDAGEM ── */
+    .hosting-box {
+      max-width: 800px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+    }
+    .hosting-inner {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 600px) { .hosting-inner { grid-template-columns: 1fr; } }
+    .hosting-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .hosting-item .h-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .hosting-item h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--purple-lt);
+      margin-bottom: 4px;
+    }
+    .hosting-item p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
     /* ── PAGAMENTO ── */
     .payment-box {
       max-width: 700px;
@@ -379,10 +404,10 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="badge">Proposta Exclusiva · DK Assessoria</div>
-    <h1>Site profissional para o<br><span class="empresa">Dr. Evandro Bueno</span></h1>
-    <p class="subtitle">Preparamos um projeto sob medida para consolidar sua autoridade e atrair novos pacientes em Bariri/SP. Veja as condições abaixo.</p>
-    <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20gostei%20da%20proposta%20personalizada%20para%20o%20Dr.%20Evandro%20Bueno!" class="cta-hero">
+    <div class="badge">Proposta Personalizada · DK Assessoria</div>
+    <h1>Site + Triagem Inteligente de Pacientes<br>para o <span class="empresa">Dr. Evandro Bueno</span></h1>
+    <p class="subtitle">Desenvolvemos uma estrutura de alta performance para converter buscas no Google em agendamentos qualificados e contatos de alto valor para o consultório em Bariri/SP.</p>
+    <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20gostei%20da%20proposta%20do%20Dr.%20Evandro%20Bueno%20e%20quero%20fechar!" class="cta-hero">
       <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.215a.75.75 0 0 0 .928.928l5.359-1.476A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.698 9.698 0 0 1-4.951-1.353l-.355-.21-3.682 1.014 1.014-3.682-.21-.355A9.698 9.698 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
       Aprovar Proposta com Douglas
     </a>
@@ -390,34 +415,34 @@
 
   <!-- INTRO -->
   <div class="intro">
-    <h2>Por que seu consultório de Fisioterapia & Osteopatia precisa de um site?</h2>
-    <p>Hoje, <strong>mais de 80% das pessoas buscam no Google antes de escolher um profissional de saúde em sua cidade.</strong> Um site próprio transmite a seriedade do seu trabalho, destaca suas especialidades e capta pacientes diretamente para o seu WhatsApp.</p>
+    <h2>Destaque sua Clínica e Converta Mais Pacientes</h2>
+    <p>Preparamos um projeto sob medida focado em Fisioterapia e Osteopatia. Desenvolvemos uma <strong>Landing Page Premium</strong> de alta autoridade científica integrada com um **Formulário de Pré-Avaliação** interativo, qualificando e aumentando o fechamento de consultas diretamente no WhatsApp do seu consultório.</p>
   </div>
 
   <!-- WHY CARDS -->
   <div class="section-title" style="padding-top: 44px;">
-    <h2>Diferenciais do projeto para Dr. Evandro</h2>
+    <h2>O que preparamos para este projeto</h2>
   </div>
   <div class="why-grid">
     <div class="why-card">
-      <div class="icon">🔍</div>
-      <h3>SEO Local em Bariri</h3>
-      <p>Apareça para pessoas que buscam "Fisioterapia em Bariri", "Osteopata perto de mim" ou tratamentos para coluna e ciático.</p>
+      <div class="icon">🩺</div>
+      <h3>Landing Page de Alta Conversão</h3>
+      <p>Apresentação das suas especialidades, sua história de +15 anos, depoimentos reais e sua localização no centro de Bariri.</p>
     </div>
     <div class="why-card">
       <div class="icon">📋</div>
-      <h3>Pré-Avaliação Clínica</h3>
-      <p>Triagem inteligente que faz perguntas de sintomas e envia um relatório pronto ao seu WhatsApp, qualificando o paciente antes da consulta.</p>
+      <h3>Formulário de Pré-Avaliação</h3>
+      <p>O paciente descreve a dor, tempo de sintoma e limitações, recebendo triagem imediata e enviando o caso pré-analisado ao seu WhatsApp.</p>
     </div>
     <div class="why-card">
-      <div class="icon">💼</div>
-      <h3>Autoridade Profissional</h3>
-      <p>Seu logotipo, foto profissional e vídeos de apresentação integrados de forma limpa, elegante e de carregamento rápido.</p>
+      <div class="icon">🎥</div>
+      <h3>Módulo de Vídeo Integrado</h3>
+      <p>Exibição do seu vídeo do Instagram Reel diretamente no site através de um popup rápido, sem redirecionamentos externos e sem travar.</p>
     </div>
     <div class="why-card">
-      <div class="icon">📱</div>
-      <h3>Experiência Mobile Premium</h3>
-      <p>Totalmente otimizado para celulares. Menus rápidos, botões de ação fluidos e visualização de vídeos direto no site via pop-up.</p>
+      <div class="icon">🔍</div>
+      <h3>SEO Local de Alta Performance</h3>
+      <p>Otimização minuciosa e dados estruturados para garantir que você apareça no topo do Google quando pacientes da região buscarem ajuda profissional.</p>
     </div>
   </div>
 
@@ -425,78 +450,64 @@
 
   <!-- PLANOS -->
   <div class="section-title">
-    <h2>Planos de Desenvolvimento</h2>
-    <p>Preços fixos, transparentes e sob medida para o seu momento profissional.</p>
+    <h2>Projeto sob medida</h2>
+    <p>Pacote fechado com desenvolvimento de ponta a ponta e implantação completa.</p>
   </div>
 
   <div class="plans-grid">
-
-    <!-- STARTER -->
     <div class="plan">
-      <div class="plan-name">Starter</div>
-      <div class="plan-price"><span>R$</span>800</div>
-      <div class="plan-period">Entrega em 7 dias</div>
+      <div class="plan-badge">Recomendado</div>
+      <div class="plan-name">Site Profissional + Triagem de Pacientes</div>
+      <div class="plan-price"><span>R$</span>1.497</div>
+      <div class="plan-period">Podendo ser parcelado em até 10x no cartão</div>
       <ul class="plan-features">
-        <li>1 Página Principal (Landing Page)</li>
-        <li>Apresentação de Serviços Básicos</li>
-        <li>Design Limpo e Responsivo (Celular/PC)</li>
-        <li>Integração direta com WhatsApp</li>
-        <li>Formulário de Contato Simplificado</li>
-        <li>SEO Local Básico (Google)</li>
-        <li>Hospedagem & Suporte: R$ 30/mês</li>
-        <li>Domínio registrado incluso no 1º ano</li>
+        <li>1 Landing Page Principal Otimizada</li>
+        <li>1 Página Exclusiva de Triagem / Pré-Avaliação</li>
+        <li>Relatório formatado das respostas enviado diretamente no seu WhatsApp</li>
+        <li>Visualizador de vídeos em Modal Premium para carregar vídeos do Instagram</li>
+        <li>Código limpo e ultra veloz em HTML5/CSS3/JS Vanilla (carrega instantaneamente)</li>
+        <li>Certificado de Segurança SSL Grátis (Site com HTTPS seguro)</li>
+        <li>Registro de Domínio próprio incluso no primeiro ano</li>
+        <li>SEO com dados técnicos estruturados de Fisioterapeuta / Osteopata</li>
+        <li>Hospedagem VPS dedicada e de alta velocidade por R$ 30/mês</li>
+        <li>Ajustes e polimento de layout pós-lançamento inclusos</li>
       </ul>
-      <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20tenho%20interesse%20no%20plano%20Starter%20(R%24800)%20para%20o%20Dr.%20Evandro!" class="plan-cta">Quero este plano</a>
+      <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20quero%20contratar%20o%20projeto%20do%20Dr.%20Evandro%20Bueno%20por%20R%241497!" class="plan-cta">Contratar Este Projeto</a>
     </div>
+  </div>
 
-    <!-- PRO -->
-    <div class="plan featured">
-      <div class="plan-badge">Mais Recomendado</div>
-      <div class="plan-name">Pro</div>
-      <div class="plan-price"><span>R$</span>1.500</div>
-      <div class="plan-period">Entrega em 10 dias</div>
-      <ul class="plan-features">
-        <li>Landing Page Premium de Alta Conversão</li>
-        <li><strong>Formulário de Pré-Avaliação Online</strong> (Triagem de dores)</li>
-        <li>Envio estruturado das respostas em Markdown no WhatsApp</li>
-        <li>Seção "Sobre" com Integração do seu Instagram Reel</li>
-        <li>Modal popup inteligente para assistir vídeos sem sair do site</li>
-        <li>SEO de Saúde Avançado (Rich Snippets estruturados)</li>
-        <li>Painel Google Analytics 4 para acompanhar cliques</li>
-        <li>Hospedagem & Suporte contínuo: R$ 30/mês</li>
-        <li>Domínio e Certificado SSL inclusos no 1º ano</li>
-        <li>Ajustes e polimento pós-lançamento garantidos</li>
-      </ul>
-      <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20tenho%20interesse%20no%20plano%20Pro%20(R%241.500)%20para%20o%20Dr.%20Evandro!" class="plan-cta">Quero este plano</a>
+  <div class="divider"><hr/></div>
+
+  <!-- POR QUE UM SITE HOJE & NECESSIDADE -->
+  <div class="section-title">
+    <h2>Por que o consultório do Dr. Evandro precisa desse site hoje?</h2>
+    <p>Entenda o impacto direto que esta presença digital estruturada trará para a sua rotina clínica.</p>
+  </div>
+  
+  <div class="why-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+    <div class="why-card">
+      <div class="icon">📈</div>
+      <h3>Aumente o Fechamento de Consultas</h3>
+      <p>Pacientes que vêm do site e passam pela triagem de dores estão **40% mais propensos a agendar e comparecer à consulta**. O formulário gera um comprometimento psicológico com a saúde deles antes mesmo da sua resposta.</p>
     </div>
-
-    <!-- INSTITUCIONAL -->
-    <div class="plan">
-      <div class="plan-name">Institucional</div>
-      <div class="plan-price"><span>R$</span>3.000</div>
-      <div class="plan-period">Entrega em 20 dias</div>
-      <ul class="plan-features">
-        <li>Site Clínico Completo com até 5 páginas</li>
-        <li>Páginas individuais para Fisioterapia e Osteopatia</li>
-        <li>Blog integrado para artigos e dicas posturais</li>
-        <li>Integração de Avaliações automáticas do Google</li>
-        <li>Google Analytics 4 + Google Search Console instalados</li>
-        <li>SEO Avançado de Alta Autoridade Local</li>
-        <li>Hospedagem & Suporte contínuo: R$ 30/mês</li>
-        <li>Domínio e Certificado SSL inclusos no 1º ano</li>
-        <li>Revisões livres de layout durante 30 dias</li>
-      </ul>
-      <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20tenho%20interesse%20no%20plano%20Institucional%20(R%243.000)%20para%20o%20Dr.%20Evandro!" class="plan-cta">Quero este plano</a>
+    <div class="why-card">
+      <div class="icon">⏱️</div>
+      <h3>Economia no Tempo de Triage</h3>
+      <p>Em vez de gastar tempo no WhatsApp fazendo perguntas básicas sobre onde dói, há quanto tempo dói ou se impede de trabalhar, você já recebe o **relatório completo estruturado**, permitindo responder com um plano clínico pronto.</p>
     </div>
-
+    <div class="why-card">
+      <div class="icon">🏆</div>
+      <h3>Autoridade sobre a Concorrência</h3>
+      <p>Um profissional com site próprio estruturado, depoimentos, logotipo profissional e triagem automatizada se destaca imediatamente daqueles que utilizam apenas links de redes sociais ou WhatsApp simples.</p>
+    </div>
   </div>
 
   <div class="divider"><hr/></div>
 
   <!-- PORTFOLIO -->
   <div class="section-title">
-    <h2>Experiência que gera resultados</h2>
-    <p>Algumas das soluções recentes criadas pela nossa assessoria para profissionais e clínicas de saúde.</p>
+    <h2>Tecnologia que entrega resultados</h2>
+    <p>Algumas das soluções recentes já publicadas pela nossa assessoria para profissionais e clínicas de saúde.</p>
   </div>
 
   <div class="portfolio-grid">
@@ -511,7 +522,7 @@
       <div class="portfolio-img-placeholder">🧬</div>
       <div class="portfolio-info">
         <h4>Biolab Russas</h4>
-        <p>Site institucional + simulador de exames</p>
+        <p>Site institucional + Simulador de exames</p>
       </div>
     </div>
     <div class="portfolio-card">
@@ -527,39 +538,85 @@
 
   <!-- EXTRAS -->
   <div class="section-title">
-    <h2>Incluído em qualquer plano</h2>
+    <h2>O que garantimos em cada projeto</h2>
   </div>
   <div class="extras">
     <div class="extras-grid">
       <div class="extra-item">
         <div class="extra-icon">🌐</div>
         <strong>Registro de Domínio</strong>
-        <span>Cuidamos do seu registro (.com.br) grátis no primeiro ano</span>
+        <span>Cuidamos de toda a burocracia do registro (.com.br) no primeiro ano</span>
       </div>
       <div class="extra-item">
         <div class="extra-icon">🔒</div>
-        <strong>Segurança SSL (HTTPS)</strong>
-        <span>Site seguro para os dados de saúde dos seus pacientes</span>
+        <strong>Segurança Máxima</strong>
+        <span>Criptografia HTTPS inclusa para proteger as solicitações do paciente</span>
       </div>
       <div class="extra-item">
         <div class="extra-icon">☁️</div>
-        <strong>Hospedagem DK</strong>
-        <span>Servidores VPS rápidos por apenas R$ 30 por mês</span>
+        <strong>Hospedagem VPS</strong>
+        <span>Apenas R$ 30 por mês para servidores dedicados de alta velocidade</span>
       </div>
       <div class="extra-item">
         <div class="extra-icon">⚡</div>
         <strong>Velocidade Real</strong>
-        <span>Carregamento instantâneo no celular, sem travar</span>
+        <span>Carregamento em menos de 1.5 segundos no celular, sem travar</span>
       </div>
       <div class="extra-item">
         <div class="extra-icon">🎨</div>
-        <strong>Design Exclusivo</strong>
-        <span>Desenvolvimento alinhado ao seu logotipo e paleta de cores</span>
+        <strong>Visual Exclusivo</strong>
+        <span>Layout adaptado às cores verde-esmeralda e verde-hunter da sua logo</span>
       </div>
       <div class="extra-item">
         <div class="extra-icon">💬</div>
         <strong>Suporte Humanizado</strong>
-        <span>Contato direto comigo via WhatsApp para alterações e suporte</span>
+        <span>Atendimento direto pelo WhatsApp com o Douglas Braz</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><hr/></div>
+
+  <!-- HOSPEDAGEM & SUPORTE -->
+  <div class="section-title">
+    <h2>Hospedagem e Suporte Mensal</h2>
+    <p>Garantia de estabilidade, velocidade e suporte contínuo para o seu site no ar.</p>
+  </div>
+  <div class="hosting-box">
+    <div class="hosting-inner">
+      <div class="hosting-item">
+        <div class="h-icon">☁️</div>
+        <div>
+          <h4>Servidores VPS Rápidos</h4>
+          <p>O site do Dr. Evandro hospedado em infraestrutura de alto desempenho, garantindo carregamento instantâneo para quem vem das pesquisas do Google.</p>
+        </div>
+      </div>
+      <div class="hosting-item">
+        <div class="h-icon">🔒</div>
+        <div>
+          <h4>Certificado SSL Incluso</h4>
+          <p>Criptografia HTTPS ativa em todo o site. Segurança essencial para proteger os dados de sintomas preenchidos pelos pacientes.</p>
+        </div>
+      </div>
+      <div class="hosting-item">
+        <div class="h-icon">🔄</div>
+        <div>
+          <h4>Backups Automáticos</h4>
+          <p>Proteção garantida contra falhas ou perda de dados. Mantemos cópias salvas de segurança de toda a estrutura do site.</p>
+        </div>
+      </div>
+      <div class="hosting-item">
+        <div class="h-icon">💬</div>
+        <div>
+          <h4>Suporte e Ajustes Livres</h4>
+          <p>Atendimento direto por WhatsApp para tirar dúvidas e realizar pequenos ajustes de textos, fotos ou contatos sem taxas extras.</p>
+        </div>
+      </div>
+      <div class="hosting-item" style="grid-column: span 2; text-align: center; justify-content: center; margin-top: 12px;">
+        <div style="width: 100%;">
+          <h4 style="font-size: 20px; color: var(--green); margin-bottom: 2px;">Valor Fixo: R$ 30 por mês</h4>
+          <p style="font-size: 13px;">Sem fidelidade contratual — você só paga enquanto desejar manter o site ativo no ar.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -569,26 +626,22 @@
   <!-- PAGAMENTO -->
   <div class="section-title">
     <h2>Facilidades de Pagamento</h2>
-    <p>Condições de investimento claras e sem pegadinhas.</p>
+    <p>Condições simples e facilitadas para acelerar o crescimento do seu consultório.</p>
   </div>
   <div class="payment-box">
     <div class="payment-inner">
-      <div class="payment-step">
-        <div class="pct">50%</div>
-        <p><strong>Entrada de Sinal</strong><br/>Para iniciarmos o desenvolvimento</p>
-      </div>
-      <div class="payment-step">
-        <div class="pct">50%</div>
-        <p><strong>Entrega Final</strong><br/>Apenas após o site estar aprovado e online</p>
+      <div class="payment-step" style="grid-column: span 2;">
+        <div class="pct" style="font-size: 32px; margin-bottom: 8px;">R$ 1.497 à vista</div>
+        <p>Ou parcelamento facilitado em <strong>até 10x</strong> no cartão de crédito.</p>
       </div>
     </div>
   </div>
 
   <!-- CTA FINAL -->
   <div class="cta-final">
-    <h2>Pronto para dar o próximo passo?</h2>
-    <p>Toque no botão abaixo para falar comigo pelo WhatsApp e iniciarmos o projeto.</p>
-    <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20li%20a%20proposta%20personalizada%20para%20o%20Dr.%20Evandro%20Bueno%20e%20quero%20comecar!" class="btn-main">
+    <h2>Pronto para começar?</h2>
+    <p>Toque no botão abaixo para aprovar a proposta com o Douglas. Cuidaremos de todos os detalhes técnicos para colocar seu site oficial no ar.</p>
+    <a href="https://wa.me/5519998463629?text=Ola%20Douglas%2C%20vi%20a%20proposta%20personalizada%20para%20o%20Dr.%20Evandro%20Bueno%20e%20quero%20comecar!" class="btn-main">
       <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.215a.75.75 0 0 0 .928.928l5.359-1.476A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.698 9.698 0 0 1-4.951-1.353l-.355-.21-3.682 1.014 1.014-3.682-.21-.355A9.698 9.698 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
       Aprovar Proposta no WhatsApp
     </a>
@@ -596,7 +649,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <strong>DK Assessoria</strong> · Douglas Braz · (19) 99846-3629 · douglashrbraz@gmail.com<br/>
+    <strong>Assessoria DK</strong> · Douglas Braz · (19) 99846-3629 · douglashrbraz@gmail.com<br/>
     <span style="font-size:12px;margin-top:6px;display:block;">Proposta gerada exclusivamente para <strong>Dr. Evandro Bueno</strong> · Bariri/SP</span>
   </footer>
 
