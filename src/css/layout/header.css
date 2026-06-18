@@ -53,17 +53,21 @@
   color: var(--color-primary);
   white-space: nowrap;
   flex-shrink: 0;
+  height: 100%;
+  padding: var(--space-2) 0;
 }
 
 .header__logo img {
-  height: 60px;
+  height: 50px;
   width: auto;
+  max-height: 100%;
+  object-fit: contain;
   transition: height var(--transition-base);
 }
 
 @media (min-width: 768px) {
   .header__logo img {
-    height: 70px;
+    height: 60px;
   }
 }
 
