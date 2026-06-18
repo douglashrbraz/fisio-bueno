@@ -296,3 +296,28 @@
 .img-placeholder--portrait  { aspect-ratio: 3/4; max-width: 320px; }
 .img-placeholder--square    { aspect-ratio: 1/1; }
 .img-placeholder--video     { aspect-ratio: 16/9; }
+
+/* Custom modifiers for portrait photo and Instagram embeds */
+.hero__image-wrap--portrait {
+  aspect-ratio: 10/19;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.hero__image-wrap--video {
+  aspect-ratio: 9/16;
+  max-width: 340px;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.hero__image-wrap--video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
